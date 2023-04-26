@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.6 on win32)" generated="20230426 16:42:14.916" rpa="false" schemaversion="2">
+<suite id="s1" name="Automation Testing" source="H:\Reevooy\Automation_Testing\automation_testing.robot">
+<kw name="Create Instance" type="SETUP">
+<kw name="Get Library Instance" library="BuiltIn">
+<var>${Client}</var>
+<arg>client1</arg>
+<doc>Returns the currently active instance of the specified test library.</doc>
+<msg timestamp="20230426 16:43:31.030" level="INFO">${Client} = &lt;Automation.Automation object at 0x00000299153E20D0&gt;</msg>
+<status status="PASS" starttime="20230426 16:43:06.980" endtime="20230426 16:43:31.030"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${Client}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230426 16:43:31.032" level="INFO">${Client} = &lt;Automation.Automation object at 0x00000299153E20D0&gt;</msg>
+<status status="PASS" starttime="20230426 16:43:31.030" endtime="20230426 16:43:31.032"/>
+</kw>
+<status status="PASS" starttime="20230426 16:43:06.979" endtime="20230426 16:43:31.032"/>
+</kw>
+<test id="s1-t1" name="I do login and verify">
+<kw name="I do login account">
+<arg>${Client}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<kw name="Call Method" library="BuiltIn">
+<arg>${Client}</arg>
+<arg>click_login_link</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20230426 16:43:36.286" level="INFO">login link clicked</msg>
+<status status="PASS" starttime="20230426 16:43:31.036" endtime="20230426 16:43:36.286"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${Client}</arg>
+<arg>enter_email</arg>
+<arg>${email}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20230426 16:43:37.184" level="INFO">entered email:email_id@gmail.com </msg>
+<status status="PASS" starttime="20230426 16:43:36.286" endtime="20230426 16:43:37.185"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${Client}</arg>
+<arg>enter_password</arg>
+<arg>${password}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20230426 16:43:37.383" level="INFO">entered password: Todoist@1</msg>
+<status status="PASS" starttime="20230426 16:43:37.185" endtime="20230426 16:43:37.383"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${Client}</arg>
+<arg>click_login_btn</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20230426 16:43:37.587" level="INFO">login_btn clicked</msg>
+<status status="PASS" starttime="20230426 16:43:37.383" endtime="20230426 16:43:47.588"/>
+</kw>
+<status status="PASS" starttime="20230426 16:43:31.034" endtime="20230426 16:43:47.588"/>
+</kw>
+<status status="PASS" starttime="20230426 16:43:31.033" endtime="20230426 16:43:47.589"/>
+</test>
+<test id="s1-t2" name="I do create new todo list and verify">
+<kw name="I do create new task and verify">
+<arg>${Client}</arg>
+<arg>${task_name}</arg>
+<arg>${description}</arg>
+<kw name="Call Method" library="BuiltIn">
+<arg>${Client}</arg>
+<arg>click_add_task</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20230426 16:43:56.109" level="INFO">add_task clicked</msg>
+<status status="PASS" starttime="20230426 16:43:47.592" endtime="20230426 16:43:56.109"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${Client}</arg>
+<arg>enter_task_details</arg>
+<arg>${task_name}</arg>
+<arg>${description}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20230426 16:43:56.554" level="INFO">task_name entered</msg>
+<msg timestamp="20230426 16:43:57.002" level="INFO">description entered</msg>
+<msg timestamp="20230426 16:44:17.407" level="INFO">add_task_btn clicked</msg>
+<status status="PASS" starttime="20230426 16:43:56.110" endtime="20230426 16:44:17.407"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${Client}</arg>
+<arg>verify_task_creation</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20230426 16:44:17.432" level="INFO">task_creation successful</msg>
+<msg timestamp="20230426 16:44:17.547" level="INFO">cancel_task_btn clicked</msg>
+<status status="PASS" starttime="20230426 16:44:17.408" endtime="20230426 16:44:17.547"/>
+</kw>
+<status status="PASS" starttime="20230426 16:43:47.591" endtime="20230426 16:44:17.548"/>
+</kw>
+<status status="PASS" starttime="20230426 16:43:47.590" endtime="20230426 16:44:17.549"/>
+</test>
+<test id="s1-t3" name="I do add sub task and verify">
+<kw name="I do add sub task, verify">
+<arg>${Client}</arg>
+<arg>${sub_task_task_name}</arg>
+<arg>${sub_task_description}</arg>
+<kw name="Call Method" library="BuiltIn">
+<arg>${Client}</arg>
+<arg>open_created_task</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20230426 16:44:17.893" level="INFO">open_created_task clicked</msg>
+<status status="PASS" starttime="20230426 16:44:17.552" endtime="20230426 16:44:17.893"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${Client}</arg>
+<arg>add_sub_task</arg>
+<arg>${sub_task_task_name}</arg>
+<arg>${sub_task_description}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20230426 16:44:48.185" level="ERROR">add_sub_task failed</msg>
+<msg timestamp="20230426 16:44:48.554" level="INFO">H:\Reevooy/Screenshots</msg>
+<msg timestamp="20230426 16:44:48.554" level="FAIL">Calling method 'add_sub_task' failed: Message: 
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00CADCE3+50899]
+	(No symbol) [0x00C3E111]
+	(No symbol) [0x00B45588]
+	(No symbol) [0x00B708F9]
+	(No symbol) [0x00B70AFB]
+	(No symbol) [0x00B9F902]
+	(No symbol) [0x00B8B944]
+	(No symbol) [0x00B9E01C]
+	(No symbol) [0x00B8B6F6]
+	(No symbol) [0x00B67708]
+	(No symbol) [0x00B6886D]
+	GetHandleVerifier [0x00F13EAE+2566302]
+	GetHandleVerifier [0x00F492B1+2784417]
+	GetHandleVerifier [0x00F4327C+2759788]
+	GetHandleVerifier [0x00D45740+672048]
+	(No symbol) [0x00C48872]
+	(No symbol) [0x00C441C8]
+	(No symbol) [0x00C442AB]
+	(No symbol) [0x00C371B7]
+	BaseThreadInitThunk [0x75CA0099+25]
+	RtlGetAppContainerNamedObjectPath [0x77BB7B6E+286]
+	RtlGetAppContainerNamedObjectPath [0x77BB7B3E+238]
+</msg>
+<status status="FAIL" starttime="20230426 16:44:17.893" endtime="20230426 16:44:48.554"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${Client}</arg>
+<arg>verify_sub_task_creation</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" starttime="20230426 16:44:48.554" endtime="20230426 16:44:48.554"/>
+</kw>
+<status status="FAIL" starttime="20230426 16:44:17.551" endtime="20230426 16:44:48.555"/>
+</kw>
+<status status="FAIL" starttime="20230426 16:44:17.551" endtime="20230426 16:44:48.556">Calling method 'add_sub_task' failed: Message: 
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00CADCE3+50899]
+	(No symbol) [0x00C3E111]
+	(No symbol) [0x00B45588]
+	(No symbol) [0x00B708F9]
+	(No symbol) [0x00B70AFB]
+	(No symbol) [0x00B9F902]
+	(No symbol) [0x00B8B944]
+	(No symbol) [0x00B9E01C]
+	(No symbol) [0x00B8B6F6]
+	(No symbol) [0x00B67708]
+	(No symbol) [0x00B6886D]
+	GetHandleVerifier [0x00F13EAE+2566302]
+	GetHandleVerifier [0x00F492B1+2784417]
+	GetHandleVerifier [0x00F4327C+2759788]
+	GetHandleVerifier [0x00D45740+672048]
+	(No symbol) [0x00C48872]
+	(No symbol) [0x00C441C8]
+	(No symbol) [0x00C442AB]
+	(No symbol) [0x00C371B7]
+	BaseThreadInitThunk [0x75CA0099+25]
+	RtlGetAppContainerNamedObjectPath [0x77BB7B6E+286]
+	RtlGetAppContainerNamedObjectPath [0x77BB7B3E+238]
+</status>
+</test>
+<status status="FAIL" starttime="20230426 16:42:14.921" endtime="20230426 16:44:48.565"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" skip="0" id="s1" name="Automation Testing">Automation Testing</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230426 16:44:48.185" level="ERROR">add_sub_task failed</msg>
+</errors>
+</robot>
